@@ -28,21 +28,345 @@
   footer, header, hgroup, menu, nav, section {
       display: block;
   }
-  body {
+body {
       line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* ---------------General Styling------------------- */
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+:root{
+    --primary-ff:'Raleway', sans-serif;
+    --secondary-ff:'Work Sans', sans-serif;
+
+    --primary-white:#FDFFFD;
+    --primary-black:#1D192B;
+    --primary-gray:#F7F2FA;
+    --accent-gray:#eeeeee;
+    --secondary-gray:#49454F;
+    --secondary-color: #BA5B4A;
+    --accent-color: #2A396A;
+
+    --fs-300: clamp(0.6rem, 0.6rem + 0.5vw, 0.8rem);
+    --fs-400: clamp(1rem, 1rem + 0.5vw, 1.6rem);
+    --fs-500: clamp(1.5rem, 1.5rem + 0.5vw, 2rem);
+    --fs-600: clamp(2rem, 2rem + 0.5vw, 2.8rem);
+
+    --tiny-padding: 0.3rem;
+    --small-padding: 0.8rem;
+    --medium-padding: 1.4rem;
+    --large-padding: 1.8rem;
+}
+
+body{
+    min-height: 100svh;
+    font-family: var(--primary-ff);
+    color: var(--primary-black);
+    background-color: var(--primary-white);
+}
+
+.icon{
+    color: var(--primary-gray); 
+}
+
+.btn{
+    background-color: transparent;
+    /* border: var(--primary-black) 0.3px solid; */
+    border: none;
+    border-radius: 6px;
+    padding:  calc(var(--tiny-padding) + 0.4rem);
+    font-family: var(--primary-ff);
+    font-weight: 500;
+}
+
+input{
+    border: var(--primary-black) 0.4px solid;
+    border-radius: 4px;
+    padding: var(--tiny-padding);
+
+}
+
+input:focus{
+    outline: none;
+    border: var(--primary-black) 1px solid;
+    border-radius: 4px;
+}
+/* ----------Header--------------- */
+
+.page-header{
+    background-color: var(--secondary-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:var(--small-padding) var(--small-padding);
+    height: 10svh;
+}
+
+.drawer-btn.header,
+.plus-btn.header{
+    color: var(--primary-white);
+    width: var(--fs-500);
+    height: var(--fs-500);
+}
+
+.logo-txt{
+    color: var(--primary-white);
+    font-size: var(--fs-500);
+}
+
+/* ------------Navigation Drawer---------------- */
+
+.main-content{
+    height: 90svh;
+}
+
+.nav-drawer{
+    display: none;
+}
+
+.nav-drawer.active{
+    background-color: var(--primary-gray);
+    max-width: 70vw;
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+    padding:var(--small-padding);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100% ;
+}
+
+.quick-access-container,
+.projects-container{
+    display: flex;
+    flex-direction: column;
+    gap: var(--small-padding);
+}
+
+.quick-access-header,
+.projects-header{
+    display: flex;
+    justify-content: space-between;
+    font-weight: 600;
+}
+
+.quick-access-list,
+.projects-list{
+    display: flex;
+    flex-direction: column;
+    gap: calc(var(--small-padding) - 0.2rem);
+}
+
+.quick-access-item,
+.projects-item{
+    margin-left: var(--small-padding);
+    padding: var(--small-padding);
+    display: flex;
+    gap: 0.4rem;
+}
+
+.calendar-dynamic-day{
+    font-size: var(--fs-300);
+    font-weight: 600;
+}
+
+.projects-item{
+    justify-content: space-between;
+}
+.projects-item > div{
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.bullet-icon{
+    transform: scale(-0.8);
+}
+
+.bullet-icon.default{
+    color: var(--secondary-color);
+}
+
+.hr-container{
+    margin-left: var(--small-padding);
+}
+.nav-drawer-hr{
+    margin: var(--small-padding) 0;
+}
+
+.about-container{
+    margin-left: var(--small-padding);
+    font-weight: 500;
+}
+
+/* --------CTA Btn-------- */
+.cta-plus-container{
+    position: absolute;
+    bottom: 6%;
+    right: 6%;
+    border-radius: 50%;
+    background-color: var(--secondary-color);
+    display: inline-block;
+    padding: 0.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.plus-btn.cta{
+    color: var(--primary-white);
+    width: var(--fs-600);
+    height: var(--fs-600);
+}
+
+/* ----------------Current Project-------------------- */
+.current-project-container{
+    padding:var(--small-padding) var(--small-padding);
+}
+
+.current-project-header-container{
+    display: flex;
+    align-items: flex-end;
+    gap: 0.4rem;
+}
+
+.current-project-header-name{
+    font-weight: 500;
+    /* font-size: var(--fs-500); */
+    font-size: calc(var(--fs-500) - 0.4rem);
+}
+
+
+.current-project-header-date{
+    font-size: calc(var(--fs-400) - 0.4rem);
+    color: var(--secondary-gray);
+    opacity: 0.6;
+}
+
+/* -------------New Task Dialog-------------- */
+.new-task-dialog{
+    border: none;
+    box-shadow: 0px 0px 20px 4px rgba(0,0,0,0.1);
+    max-width: 90%;
+    padding: var(--medium-padding);
+    border-radius: 4px;
+}
+
+.new-task-inputs-container{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.new-task-details-container{
+    margin-top: var(--small-padding);
+    display: flex;
+    gap: 0.8rem;
+}
+
+.new-task-details{
+    border: var(--primary-black) 0.3px solid;
+    border-radius: 4px;
+    max-width: fit-content;
+    padding: var(--tiny-padding);
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-black);
+    font-size: var(--fs-300);   
+}
+
+.new-task-details > svg {
+    width: var(--fs-300);
+    height: var(--fs-300);
+    margin-right: 0.2rem;
+}
+
+.project-bullet-icon{
+    transform: scale(-0.8);
+}
+
+/* ------------Due Date------------ */
+.due-date-txt{
+    min-width:fit-content;
+    margin-top: 0.04rem;
+    margin-left: calc(var(--fs-300) + 0.2rem);
+}
+
+.datepicker-toggle {
+    -webkit-tap-highlight-color: transparent;
+    display: inline-block;
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
-  ol, ul {
-      list-style: none;
+
+.datepicker-toggle-button {
+    position: absolute;
+    left: 5%;
+    top: 24%;
+    width: var(--fs-300);
+    height: var(--fs-300);
+}
+
+.datepicker-input {
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    width: 100%;
+    padding: var(--tiny-padding);
+    cursor: pointer;
+    box-sizing: border-box;
   }
-  blockquote, q {
-      quotes: none;
+
+.datepicker-input::-webkit-calendar-picker-indicator {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
   }
-  blockquote:before, blockquote:after,
-  q:before, q:after {
-      content: '';
-      content: none;
-  }
-  table {
-      border-collapse: collapse;
-      border-spacing: 0;
-  }
+
+  /* ------------------New Task btns--------------------- */
+.dialog-hr{
+    opacity: 0.2;
+}
+
+.new-task-btns-container{
+    margin-top: 1rem;
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+}
+
+.add-task-btn{
+    background-color: var(--secondary-color);
+    color: var(--primary-white);
+}
+
+.cancel-btn{
+    background-color: var(--primary-gray);
+}
