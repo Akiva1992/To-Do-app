@@ -60,6 +60,7 @@ table {
     --primary-gray:#F7F2FA;
     --accent-gray:#eeeeee;
     --secondary-gray:#49454F;
+    --accent-gray:#84808a67;
     --secondary-color: #BA5B4A;
     --accent-color: #2A396A;
 
@@ -68,10 +69,12 @@ table {
     --fs-500: clamp(1.5rem, 1.5rem + 0.5vw, 2rem);
     --fs-600: clamp(2rem, 2rem + 0.5vw, 2.8rem);
 
-    --tiny-padding: 0.3rem;
+    --tiny-padding: 0.4rem;
     --small-padding: 0.8rem;
     --medium-padding: 1.4rem;
     --large-padding: 1.8rem;
+
+    --btn-border: var(--accent-gray) solid 0.3px;
 }
 
 body{
@@ -87,7 +90,6 @@ body{
 
 .btn{
     background-color: transparent;
-    /* border: var(--primary-black) 0.3px solid; */
     border: none;
     border-radius: 6px;
     padding:  calc(var(--tiny-padding) + 0.4rem);
@@ -96,7 +98,7 @@ body{
 }
 
 input{
-    border: var(--primary-black) 0.4px solid;
+    border: var(--btn-border);
     border-radius: 4px;
     padding: var(--tiny-padding);
 
@@ -123,6 +125,7 @@ input:focus{
     color: var(--primary-white);
     width: var(--fs-500);
     height: var(--fs-500);
+    cursor: pointer;
 }
 
 .logo-txt{
@@ -174,7 +177,8 @@ input:focus{
 }
 
 .quick-access-item,
-.projects-item{
+.projects-item,
+.projects-item div{
     margin-left: var(--small-padding);
     padding: var(--small-padding);
     display: flex;
@@ -281,27 +285,51 @@ input:focus{
 }
 
 .new-task-details{
-    border: var(--primary-black) 0.3px solid;
+    border: var(--btn-border);
     border-radius: 4px;
     max-width: fit-content;
     padding: var(--tiny-padding);
+    position: relative;
     
     display: flex;
     align-items: center;
     justify-content: center;
     color: var(--primary-black);
-    font-size: var(--fs-300);   
+    font-size: var(--fs-300);  
+    cursor: pointer; 
 }
 
-.new-task-details > svg {
-    width: var(--fs-300);
-    height: var(--fs-300);
+.selection-btn > svg {
     margin-right: 0.2rem;
+    height: var(--fs-300);
+    width: var(--fs-300);
+  }
+
+.drop-down{
+    border: var(--btn-border);
+    position: absolute;
+    top:100%;
+    z-index: 4;
+    background-color: var(--primary-white);
+    min-width: 15ch;
+    border-radius: 6px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
 }
 
-.project-bullet-icon{
-    transform: scale(-0.8);
+.options{
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: var(--tiny-padding) var(--small-padding);
+    cursor: pointer;
 }
+
+.options:hover{
+    background-color: var(--primary-gray);
+  }
 
 /* ------------Due Date------------ */
 .due-date-txt{
@@ -318,7 +346,7 @@ input:focus{
     display: flex;
     align-items: center;
     justify-content: center;
-  }
+}
 
 .datepicker-toggle-button {
     position: absolute;
@@ -337,7 +365,7 @@ input:focus{
     padding: var(--tiny-padding);
     cursor: pointer;
     box-sizing: border-box;
-  }
+}
 
 .datepicker-input::-webkit-calendar-picker-indicator {
     position: absolute;
@@ -348,6 +376,51 @@ input:focus{
     margin: 0;
     padding: 0;
     cursor: pointer;
+}
+
+/* -------------------Project options---------------------- */
+.project-bullet-icon{
+    transform: scale(-0.8);
+}
+
+.project-option > svg {
+    transform: scale(-0.6);
+}
+
+#project-drop-down{
+    display: none;
+}
+
+#project-drop-down.active{
+    display: flex;
+}
+
+
+
+/* --------------------Priority options--------------------------- */
+#priority-drop-down{
+    display: none;
+}
+
+#priority-drop-down.active{
+    display: flex;
+}
+  
+.priority-flag.one{
+    color:blueviolet;
+  }
+  
+
+.priority-flag.two{
+    color: coral;
+  }
+
+.priority-flag.three{
+    color: var(--secondary-gray);
+  }
+
+.priority-flag.four{
+    color: salmon;
   }
 
   /* ------------------New Task btns--------------------- */
