@@ -61,7 +61,7 @@ table {
     --accent-gray:#eeeeee;
     --secondary-gray:#49454F;
     --accent-gray:#84808a67;
-    --secondary-color: #BA5B4A;
+    --secondary-color: #df5037;
     --accent-color: #2A396A;
 
     --fs-300: clamp(0.6rem, 0.6rem + 0.5vw, 0.8rem);
@@ -436,8 +436,14 @@ input:focus{
 }
 
 .add-task-btn{
-    background-color: var(--secondary-color);
     color: var(--primary-white);
+    background-color: var(--secondary-color);
+    opacity: 0.4;
+}
+
+.add-task-btn.valid{
+    background-color: var(--secondary-color);
+    opacity: 1;
 }
 
 .cancel-btn{

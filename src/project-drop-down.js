@@ -29,27 +29,34 @@ function setProjectSelection(){
     }
       
     function handleSelection(event) {
-    const selectedSvg = getSelectedSVG(event.currentTarget);
-    const selectedPriorityTxt = getSelectedPriorityText(event.currentTarget);
-    console.log(selectedSvg);
-    updateSelectionButton(selectedSvg, selectedPriorityTxt);
+        const selectedSvg = getSelectedSVG(event.currentTarget);
+        const selectedPriorityTxt = getSelectedPriorityText(event.currentTarget);
+        updateSelectionButton(selectedSvg, selectedPriorityTxt);
     }
     
     function getSelectedSVG(option) {
-        console.log(option.querySelector(".bullet-icon").outerHTML)
-    return option.querySelector(".bullet-icon").outerHTML;
+        return option.querySelector(".bullet-icon").outerHTML;
     }
     
     function getSelectedPriorityText(option) {
-    return option.querySelector(".projects-item-txt").outerHTML;
+        return option.querySelector(".projects-item-txt").outerHTML;
     }
     
     function updateSelectionButton(svg, priorityTxt) {
-    document.querySelector(".project.selection-btn").innerHTML = svg + priorityTxt;
+        document.querySelector(".project.selection-btn").innerHTML = svg + priorityTxt;
     }
 
     bindSelectionEvent();
 };
 
+function showInitialProjectBtn (){
+    console.log("Hello from show init project btn")
+    document.querySelector(".project.selection-btn").innerHTML = `
+    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="project-bullet-icon" viewBox="0 0 16 16">
+    <circle cx="8" cy="8" r="8"/>
+    </svg>
+    <span class="select-project-txt">Project</span>`
+};
 
-export { projectDropDownBindEvents, insertProjectsToDropDown, setProjectSelection }
+
+export { projectDropDownBindEvents, insertProjectsToDropDown, setProjectSelection, showInitialProjectBtn }
