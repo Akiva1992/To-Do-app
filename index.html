@@ -118,8 +118,8 @@
                 <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z"/>
             </svg>
         </div>
-        <dialog class="new-task-dialog" open>
-            <form action="#" class="new-task-form">
+        <dialog class="new-task-dialog">
+            <form action="#" class="new-task-form" id="new-task-form" novalidate>
                 <div class="new-task-inputs-container">
                     <input type="text" name="task-name" id="task-name" placeholder="Task Name" required>
                     <input type="text" name="task-description" id="task-description" placeholder="Description">
@@ -138,7 +138,7 @@
                             <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="project-bullet-icon" viewBox="0 0 16 16">
                                 <circle cx="8" cy="8" r="8"/>
                               </svg>
-                            <span class="selcet-project-txt">Project</span>
+                            <span class="select-project-txt">Project</span>
                         </div>
                         <div id="project-drop-down" class="drop-down"></div>
                     </div>
@@ -180,7 +180,7 @@
                 <hr class="dialog-hr">
                 <div class="new-task-btns-container">
                     <button type="button" class="cancel-btn btn">Cancel</button>
-                    <button type="button" class="add-task-btn btn">Add task</button>
+                    <button type="submit" class="add-task-btn btn">Add task</button>
                 </div>
             </form>
         </dialog>
