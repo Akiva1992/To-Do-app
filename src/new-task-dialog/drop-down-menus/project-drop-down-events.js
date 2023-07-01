@@ -1,5 +1,5 @@
-import { bindClickEvent, clickAwayEvent } from "./drop-down-display-events";
-import { toggleDropDown, hideDropDown } from "./drop-down-display-functions";
+import { bindClickEvent, clickAwayEvent } from "../../drop-down-display-events";
+import { toggleDropDown, hideDropDown } from "../../drop-down-display-functions";
 
 
 function projectDropDownBindEvents(){
@@ -8,18 +8,6 @@ function projectDropDownBindEvents(){
     bindClickEvent(dropDownElement, dropDownContainer, toggleDropDown);
     clickAwayEvent(dropDownElement, dropDownContainer, hideDropDown)
 };
-
-
-function insertProjectsToDropDown (){
-    const projectDropDown = document.querySelector("#project-drop-down");
-    const projects = document.querySelectorAll(".projects-item > div");
-    projects.forEach(project =>{
-        const div = document.createElement("div");
-        div.classList.add("project-option","options");
-        div.innerHTML= project.innerHTML;
-        projectDropDown.append(div);
-    });
-}
 
 function setProjectSelection(){
     function bindSelectionEvent() {
@@ -59,4 +47,4 @@ function showInitialProjectBtn (){
 };
 
 
-export { projectDropDownBindEvents, insertProjectsToDropDown, setProjectSelection, showInitialProjectBtn }
+export { projectDropDownBindEvents, setProjectSelection, showInitialProjectBtn }

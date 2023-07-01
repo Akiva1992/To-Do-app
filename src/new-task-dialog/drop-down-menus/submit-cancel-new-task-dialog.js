@@ -10,11 +10,6 @@ function formSubmissionEvent (){
     });
 };
 
-function formCancelEvent (){
-    document.querySelector(".cancel-btn").addEventListener("click", ()=>{
-        closeDialog();
-    });
-};
 
 function validateTaskNameInput (){
     document.querySelector("#task-name").addEventListener("input", ()=>{
@@ -26,6 +21,12 @@ function validateTaskNameInput (){
     });
 };
 
+
+function formCancelEvent (){
+    document.querySelector(".cancel-btn").addEventListener("click", ()=>{
+        closeDialog();
+    });
+};
 
 
 

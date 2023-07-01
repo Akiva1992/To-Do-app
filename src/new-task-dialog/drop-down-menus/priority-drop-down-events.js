@@ -1,5 +1,5 @@
-import { bindClickEvent, clickAwayEvent } from "./drop-down-display-events";
-import { toggleDropDown, hideDropDown } from "./drop-down-display-functions";
+import { bindClickEvent, clickAwayEvent } from "../../drop-down-display-events";
+import { toggleDropDown, hideDropDown } from "../../drop-down-display-functions";
 
 
 function priorityDropDownBindEvents(){
