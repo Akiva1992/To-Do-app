@@ -1,6 +1,5 @@
-import { showInitialDatePicker } from "./duedate-drop-down";
-import { showInitialProjectBtn } from "./project-drop-down";
-import { showInitialPriorityBtn } from "./priority-drop-down";
+import { closeDialog } from "./display-hide-new-task-dialog";
+
 
 function formSubmissionEvent (){
     document.querySelector("#new-task-form").addEventListener("submit", (e)=>{
@@ -28,13 +27,7 @@ function validateTaskNameInput (){
 };
 
 
-function closeDialog (){
-    document.querySelector("#task-name").value =""; 
-    showInitialDatePicker();
-    showInitialProjectBtn();
-    showInitialPriorityBtn();
-    document.querySelector(".new-task-dialog").close();
-};
+
 
 
 export { formSubmissionEvent, validateTaskNameInput, formCancelEvent }

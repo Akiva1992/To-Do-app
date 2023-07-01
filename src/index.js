@@ -3,10 +3,10 @@ import { drawerEventListener } from "./nav-drawer";
 import { placeHeaderFormattedDate } from "./place-header-formatted-date";
 import { placeDrawerFormattedDate } from "./place-drawer-formatted-date";
 import { priorityDropDownBindEvents, setPrioritySelection } from "./priority-drop-down";
-import { projectDropDownBindEvents, insertProjectsToDropDown, setProjectSelection, showInitialProjectBtn } from "./project-drop-down";
+import { projectDropDownBindEvents, insertProjectsToDropDown, setProjectSelection } from "./project-drop-down";
 import { getDatepickerInput } from "./duedate-drop-down";
 import { formSubmissionEvent, validateTaskNameInput, formCancelEvent } from "./dialog-validation";
-import { bindShowDialogEvent } from "./display-new-task-dialog";
+import { showDialogEvent } from "./display-hide-new-task-dialog";
 
 drawerEventListener();
 placeHeaderFormattedDate()
@@ -19,7 +19,6 @@ setProjectSelection();
 getDatepickerInput();
 formSubmissionEvent(); 
 validateTaskNameInput(); 
-bindShowDialogEvent();
+showDialogEvent();
 formCancelEvent();
-// togglePriorityMenu();
 
