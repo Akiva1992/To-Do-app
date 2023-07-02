@@ -1,12 +1,12 @@
-import { bindClickEvent, clickAwayEvent } from "../../drop-down-display-events";
+import { bindDropDownClickEvent, dropDownClickAwayEvent } from "../../drop-down-display-events";
 import { toggleDropDown, hideDropDown } from "../../drop-down-display-functions";
 
 
 function projectDropDownBindEvents(){
     const dropDownContainer = ".project-container";
     const dropDownElement = "#project-drop-down";
-    bindClickEvent(dropDownElement, dropDownContainer, toggleDropDown);
-    clickAwayEvent(dropDownElement, dropDownContainer, hideDropDown)
+    bindDropDownClickEvent(dropDownElement, dropDownContainer, toggleDropDown);
+    dropDownClickAwayEvent(dropDownElement, dropDownContainer, hideDropDown)
 };
 
 function setProjectSelection(){

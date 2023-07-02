@@ -5,7 +5,7 @@ function insertProjectsToDropDown (){
     projects.forEach(project =>{
         const div = document.createElement("div");
         div.classList.add("project-option","options");
-        div.innerHTML= project.innerHTML;
+        div.innerHTML = project.innerHTML;
         projectDropDown.append(div);
     });
 };

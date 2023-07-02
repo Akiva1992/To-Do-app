@@ -6,12 +6,12 @@ function displayNewTaskDialog(){
     document.querySelector(".new-task-dialog").showModal();
 };
 
-function showDialogEvent(){
-    document.querySelector(".plus-btn").addEventListener("click", displayNewTaskDialog);
+function showNewTaskDialogEvent(){
+    document.querySelector(".plus-btn.header.icon").addEventListener("click", displayNewTaskDialog);
     document.querySelector(".plus-btn.cta.icon").addEventListener("click", displayNewTaskDialog);
 };
 
-function closeDialog (){
+function closeNewTaskDialog (){
     document.querySelector("#task-name").value ="";
     document.querySelector("#task-description").value ="";
     showInitialDatePicker();
@@ -20,4 +20,4 @@ function closeDialog (){
     document.querySelector(".new-task-dialog").close();
 };
 
-export { showDialogEvent, closeDialog }
+export { showNewTaskDialogEvent, closeNewTaskDialog }

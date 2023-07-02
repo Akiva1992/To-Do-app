@@ -1,11 +1,11 @@
-import { closeDialog } from "./display-hide-new-task-dialog";
+import { closeNewTaskDialog } from "./display-hide-new-task-dialog";
 
 
-function formSubmissionEvent (){
+function newTaskFormSubmissionEvent (){
     document.querySelector("#new-task-form").addEventListener("submit", (e)=>{
         if (document.querySelector("#task-name").validity.valid){
             e.preventDefault();
-            closeDialog();
+            closeNewTaskDialog();
         }
     });
 };
@@ -22,13 +22,13 @@ function validateTaskNameInput (){
 };
 
 
-function formCancelEvent (){
-    document.querySelector(".cancel-btn").addEventListener("click", ()=>{
-        closeDialog();
+function newTaskFormCancelEvent (){
+    document.querySelector(".new-task-cancel-btn").addEventListener("click", ()=>{
+        closeNewTaskDialog();
     });
 };
 
 
 
 
-export { formSubmissionEvent, validateTaskNameInput, formCancelEvent }
+export { newTaskFormSubmissionEvent, validateTaskNameInput, newTaskFormCancelEvent }

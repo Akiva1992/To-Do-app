@@ -1,12 +1,12 @@
-import { bindClickEvent, clickAwayEvent } from "../../drop-down-display-events";
+import { bindDropDownClickEvent, dropDownClickAwayEvent } from "../../drop-down-display-events";
 import { toggleDropDown, hideDropDown } from "../../drop-down-display-functions";
 
 
 function priorityDropDownBindEvents(){
     const dropDownContainer = ".priority-container";
     const dropDownElement = "#priority-drop-down";
-    bindClickEvent(dropDownElement, dropDownContainer, toggleDropDown);
-    clickAwayEvent(dropDownElement, dropDownContainer, hideDropDown)
+    bindDropDownClickEvent(dropDownElement, dropDownContainer, toggleDropDown);
+    dropDownClickAwayEvent(dropDownElement, dropDownContainer, hideDropDown)
 };
 
 function setPrioritySelection(){

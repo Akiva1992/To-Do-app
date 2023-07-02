@@ -59,15 +59,14 @@
                 <div class="projects-container">
                     <header class="projects-header">
                         <span class="projects-txt">Projects</span>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="projects-plus-icon  icon" viewBox="0 0 16 16">
-                            <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z"/>
-                        </svg>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="projects  chevron-left" viewBox="0 0 16 16">
-                            <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
-                          </svg>
-                        <!-- <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="projects chevron-down" viewBox="0 0 16 16">
-                            <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
-                          </svg> -->
+                        <div class="projects-header-btn-container">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="plus-btn projects icon" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z"/>
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="projects  chevron-left" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
+                              </svg>
+                        </div>
                     </header>
                     <ul class="projects-list">
                         <li class="projects-item">
@@ -179,8 +178,69 @@
                 </div>
                 <hr class="dialog-hr">
                 <div class="new-task-btns-container">
-                    <button type="button" class="cancel-btn btn">Cancel</button>
+                    <button type="button" class="new-task-cancel-btn cancel-btn btn">Cancel</button>
                     <button type="submit" class="add-task-btn btn">Add task</button>
+                </div>
+            </form>
+        </dialog>
+        <dialog class="new-project-dialog">
+            <form action="#" class="new-project-form" id="new-project-form" novalidate>
+                <div class="new-project-inputs-container">
+                    <h3 class="project-name-header">Project Name:</h3>
+                    <input type="text" name="project-name" id="project-name-input" required>
+                </div>
+                <h3 class="select-color-header">Project color:</h3>
+                <div class="new-project-details-container">    
+                        <div class="new-project-selection-btn">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#ee4f33ef" class="bullet-icon new-project-color-selector-btn default" viewBox="0 0 16 16">
+                                <circle cx="8" cy="8" r="8"/>
+                            </svg>
+                            <span class="new-project-color-selector-btn-txt">Default</span>
+                        </div>
+                        <div id="project-color-select-drop-down" class="drop-down">
+                            <div class="color-option">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="Pink" class="bullet-icon new-project-color-selector default" viewBox="0 0 16 16">
+                                    <circle cx="8" cy="8" r="8"/>
+                                </svg>
+                                <span class="project-color-txt">Pink</span>
+                            </div>
+                            <div class="color-option">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="DarkOrange" class="bullet-icon new-project-color-selector default" viewBox="0 0 16 16">
+                                    <circle cx="8" cy="8" r="8"/>
+                                </svg>
+                                <span class="project-color-txt">Orange</span>
+                            </div>
+                            <div class="color-option">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="DarkGreen" class="bullet-icon new-project-color-selector default" viewBox="0 0 16 16">
+                                    <circle cx="8" cy="8" r="8"/>
+                                </svg>
+                                <span class="project-color-txt">Green</span>
+                            </div>
+                            <div class="color-option">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="Crimson" class="bullet-icon new-project-color-selector default" viewBox="0 0 16 16">
+                                    <circle cx="8" cy="8" r="8"/>
+                                </svg>
+                                <span class="project-color-txt">Crimson</span>
+                            </div>
+                            <div class="color-option">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="BlueViolet" class="bullet-icon new-project-color-selector default" viewBox="0 0 16 16">
+                                    <circle cx="8" cy="8" r="8"/>
+                                </svg>
+                                <span class="project-color-txt">Blue</span>
+                            </div>
+                            <div class="color-option">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="SkyBlue" class="bullet-icon new-project-color-selector default" viewBox="0 0 16 16">
+                                    <circle cx="8" cy="8" r="8"/>
+                                </svg>
+                                <span class="project-color-txt">SkyBlue</span>
+                            </div>
+                        </div>
+                </div>
+
+                <hr class="dialog-hr">
+                <div class="new-task-btns-container">
+                    <button type="button" class="new-project-cancel-btn cancel-btn btn">Cancel</button>
+                    <button type="submit" class="add-project-btn btn">Add Project</button>
                 </div>
             </form>
         </dialog>

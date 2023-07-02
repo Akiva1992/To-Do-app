@@ -1,10 +1,10 @@
-function bindClickEvent (element, parentElement, callback){
+function bindDropDownClickEvent (element, parentElement, callback){
     document.querySelector(parentElement).addEventListener("click", ()=>{
         callback(element);
     });
 };
 
-function clickAwayEvent (element, parentElement, callback){
+function dropDownClickAwayEvent (element, parentElement, callback){
     document.addEventListener('click', (e) => {
         if (!document.querySelector(parentElement).contains(e.target)){
             callback(element);
@@ -13,4 +13,4 @@ function clickAwayEvent (element, parentElement, callback){
 };
 
 
-export { bindClickEvent, clickAwayEvent }
+export { bindDropDownClickEvent, dropDownClickAwayEvent }

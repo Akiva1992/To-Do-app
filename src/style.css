@@ -95,13 +95,25 @@ body{
     padding:  calc(var(--tiny-padding) + 0.4rem);
     font-family: var(--primary-ff);
     font-weight: 500;
+    cursor: pointer;
 }
 
 input{
     border: var(--btn-border);
     border-radius: 4px;
     padding: var(--tiny-padding);
+}
 
+input::-webkit-input-placeholder { 
+    color: var(--secondary-gray);
+    font-family:var(--primary-ff);
+    font-size: var(--fs-300);
+}
+  
+input:-moz-placeholder { 
+    color: var(--secondary-gray);
+    font-family:var(--primary-ff);
+    font-size: var(--fs-300);
 }
 
 input:focus{
@@ -136,6 +148,7 @@ input:focus{
 /* ------------Navigation Drawer---------------- */
 
 .main-content{
+    position: relative;
     height: 90svh;
 }
 
@@ -144,6 +157,8 @@ input:focus{
 }
 
 .nav-drawer.active{
+    position: absolute;
+    z-index: 3;
     background-color: var(--primary-gray);
     max-width: 70vw;
     border-top-right-radius: 6px;
@@ -166,7 +181,16 @@ input:focus{
 .projects-header{
     display: flex;
     justify-content: space-between;
+    align-items: center;
     font-weight: 600;
+    padding: var(--small-padding) var(--tiny-padding);
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.quick-access-header:hover,
+.projects-header:hover{
+    background-color: var(--accent-gray);
 }
 
 .quick-access-list,
@@ -174,20 +198,52 @@ input:focus{
     display: flex;
     flex-direction: column;
     gap: calc(var(--small-padding) - 0.2rem);
+    cursor: pointer;
 }
+
 
 .quick-access-item,
 .projects-item,
 .projects-item div{
-    margin-left: var(--small-padding);
-    padding: var(--small-padding);
+    font-size: var(--fs-300);
     display: flex;
+    align-items: center;
     gap: 0.4rem;
+    padding: var(--tiny-padding) var(--tiny-padding);
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.bullet-icon{
+    transform: scale(-0.6);
+}
+
+.quick-access-item:hover,
+.projects-item:hover,
+.projects-item:hover{
+    background-color: var(--accent-gray);
 }
 
 .calendar-dynamic-day{
     font-size: var(--fs-300);
     font-weight: 600;
+}
+
+.plus-btn.projects,
+.projects.chevron-left{
+    color: var(--primary-black);
+    width: var(--fs-400);
+    height: var(--fs-400);
+}
+
+.plus-btn.projects:hover,
+.projects.chevron-left:hover{
+    color: var(--secondary-color);
+}
+
+.projects.chevron-left{
+    transform: scale(0.8) ;
+    transform: rotate(-90deg);
 }
 
 .projects-item{
@@ -199,9 +255,9 @@ input:focus{
     gap: 0.4rem;
 }
 
-.bullet-icon{
+/* .bullet-icon{
     transform: scale(-0.8);
-}
+} */
 
 .bullet-icon.default{
     color: var(--secondary-color);
@@ -231,6 +287,7 @@ input:focus{
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
 }
 
 .plus-btn.cta{
@@ -448,4 +505,75 @@ input:focus{
 
 .cancel-btn{
     background-color: var(--primary-gray);
+}
+
+/* --------------New Project Dialog--------------------------- */
+.new-project-details-container{
+    position: relative;
+} 
+
+.new-project-selection-btn,
+.color-option,
+.new-project-details-container{
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.new-project-selection-btn{
+    width: 100%;
+}
+
+#project-color-select-drop-down{
+    left: 0;
+    width: 100%;
+}
+
+.color-option{
+    padding: var(--tiny-padding);
+}
+
+.color-option:hover{
+    background-color: var(--primary-gray);
+}
+
+h3.project-name-header,
+h3.select-color-header{
+    margin-top: var(--tiny-padding);
+    padding: var(--tiny-padding);
+    padding-left: 0%;
+    padding-bottom: 0.2rem;
+    font-size: var(--fs-300);
+    font-weight: 500;
+
+}
+
+#project-name-input{
+    padding: var(--tiny-padding);
+}
+
+.new-project-details-container{
+    border: var(--btn-border);
+    border-radius: 4px;
+    padding: var(--tiny-padding);
+    font-size: var(--fs-300);
+}
+
+#project-color-select-drop-down{
+    display: none;
+}
+
+#project-color-select-drop-down.active{
+    display: flex;
+}
+
+.add-project-btn{
+    color: var(--primary-white);
+    background-color: var(--secondary-color);
+    opacity: 0.4;
+}
+
+.add-project-btn.valid{
+    background-color: var(--secondary-color);
+    opacity: 1;
 }
